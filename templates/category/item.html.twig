@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  {{ category.name }}
+{% endblock %}
+
+{% block body %}
+  <h1 class="text-4xl text-center">{{ category.name }}</h1>
+
+  {% for recipe in category.recipes %}
+    <p>- {{ recipe.name }}</p>
+  {% else %}
+    <p>Aucun recette trouvée pour cette catégorie.</p>
+  {% endfor %}
+{% endblock %}

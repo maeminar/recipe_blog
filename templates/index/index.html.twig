@@ -1,20 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block title %}Site de cuisine{% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .example-wrapper { margin: 2em auto; max-width: 800px; width: 55%; font: 25px/1.5 sans-serif; }
+    .example-wrapper code { background: #f7f7f7; padding: 2px 6px; }
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/HB/Symfony/recipe_blog/src/Controller/IndexController.php</code></li>
-        <li>Your template at <code>C:/Users/HB/Symfony/recipe_blog/templates/index/index.html.twig</code></li>
-    </ul>
+    <h1>Ceci est un site de cuisine ! 🥙</h1>
+<p>
+  <img class="h-[350px]" src="{{ asset('images/burger.jpg') }}" alt="Mon image de Burger" />
+</p>
 </div>
 {% endblock %}
