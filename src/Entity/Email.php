@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\EmailRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert; //Pour pouvoir intégrer les asserts
 
 #[ORM\Entity(repositoryClass: EmailRepository::class)]
 class Email
@@ -14,6 +15,8 @@ class Email
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "email obligatoire")] // L'email ne peut pas être vide. Pour contrôler la validation côté serveur.
+    #[Assert\Email(message : "email invalide")] //Pour asserter que c'est un email il va vérifier le format s'il est conforme au format.
     private ?string $email = null;
 
     public function getId(): ?int

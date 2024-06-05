@@ -20,7 +20,7 @@ class NewsletterController extends AbstractController
 
         $form->handleRequest(request: $request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) { //Vérification de la validité du formaulaire
             $em->persist($newsletterEmail);
             $em->flush();
             return $this->redirectToRoute('newsletter_thanks');
@@ -31,12 +31,9 @@ class NewsletterController extends AbstractController
         ]);
     }
 
-        #[Route('/newsletter/thanks/{email}', name: 'newsletter_thanks')]
-        public function thanks(string $email): Response
+    #[Route('/newsletter/thanks', name: 'newsletter_thanks')]
+    public function thanks(): Response
     {
-        return $this->render('newsletter/thanks.html.twig',
-    [
-        'email' => $email,
-    ]);
+        return $this->render('newsletter/thanks.html.twig');
     }
 }
