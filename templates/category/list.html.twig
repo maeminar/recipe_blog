@@ -5,11 +5,14 @@
 {% endblock %}
 
 {% block body %}
-  <h1 class="text-4xl text-center m-6">Recettes par catégories</h1>
+<style>
+    .styletitle { margin: 2em auto; width: 100%; font: 25px/1.5 sans-serif; }
+</style>
+  <h1 class="styletitle text-4xl text-center m-6">Recettes par catégories</h1>
 
   {% for category in categories %}
     <p>
-      <a class="hover:underline" href="{{ path('category_item', { id: category.id }) }}">{{ category.name }}</a> ({{ category.recipes|length }} recettes)
+      <a class="text-4xl m-6 hover:underline" href="{{ path('category_item', { id: category.id }) }}">{{ category.name }}</a> ({{ category.recipes|length }} recettes)
     </p>
   {% else %}
     <p>Aucune catégorie trouvée</p>

@@ -3,6 +3,9 @@
 {% block title %}Inscription à la Newsletter{% endblock %}
 
 {% block body %}
-<h1 class="text-4xl text-center">Inscription à la newsletter</h1>
+<style>
+    .styletitle { margin: 2em auto; max-width: 800px; width: 55%; font: 25px/1.5 sans-serif; }
+</style>
+<h1 class=" styletitle text-center">Inscription à notre newsletter 💌</h1>
 <div class=" w-full px-4 sm:w-1/2 lg:w-1/3 mx-auto"> {{ form(newsletterForm) }} </div> {# J'affiche mon formulaire #}
 {% endblock %}
