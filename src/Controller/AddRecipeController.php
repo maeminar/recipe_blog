@@ -22,6 +22,7 @@ class AddRecipeController extends AbstractController
 
         if ($form->isSubmitted())   //Vérification de la validité du formulaire
         { 
+            //$recipe->setCreatAt(new :\DateTime));    Si j'avais une date il faudrait ajouter ça pour qu'il ajouter automatiquement la date lors de la création d'un article
             $em->persist($addRecipe);
             $em->flush();
             return $this->redirectToRoute('addok');

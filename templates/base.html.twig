@@ -19,4 +19,9 @@
     <body class="">
         {% block body %}{% endblock %}
     </body>
+
+        {# Include mon footer #}
+        {% block footer %}
+            {{include ('footer.html.twig')}}
+        {% endblock %}
 </html>

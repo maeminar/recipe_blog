@@ -4,9 +4,11 @@ namespace App\Entity;
 
 use App\Repository\EmailRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints as Assert; //Pour pouvoir intégrer les asserts
 
 #[ORM\Entity(repositoryClass: EmailRepository::class)]
+#UniqueEntity(fields="email", message="Cet email existe déjà.") //Pour que si le mail est déjà existant alors il affiche le message d'erreur
 class Email
 {
     #[ORM\Id]
