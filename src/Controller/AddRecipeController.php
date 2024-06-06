@@ -18,13 +18,16 @@ class AddRecipeController extends AbstractController
         $addRecipe = new Recipe();
         $form = $this->createForm(AddRecipeType::class, $addRecipe); // Pour créer le formulaire
 
-        $form->handleRequest(request: $request);
+        $form->handleRequest(request: $request); 
 
         if ($form->isSubmitted())   //Vérification de la validité du formulaire
         { 
             //$recipe->setCreatAt(new :\DateTime));    Si j'avais une date il faudrait ajouter ça pour qu'il ajouter automatiquement la date lors de la création d'un article
             $em->persist($addRecipe);
             $em->flush();
+
+            $this->Addflash('success','article enregistré'); //Pour ajouter un message flash
+
             return $this->redirectToRoute('addok');
         }
 

@@ -16,8 +16,10 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body class="">
-        {% block body %}{% endblock %}
+    <body>
+        {% block body %}
+            {{include ('notifications.html.twig')}}       {# Pour les messages flashs #}
+        {% endblock %}
     </body>
 
         {# Include mon footer #}

@@ -18,7 +18,7 @@ class Email
 
     #[ORM\Column(length: 255, unique: true)]
     #[Assert\NotBlank(message: "email obligatoire")] // L'email ne peut pas être vide. Pour contrôler la validation côté serveur.
-    #[Assert\Email(message : "email invalide")] //Pour asserter que c'est un email il va vérifier le format s'il est conforme au format.
+    #[Assert\Email(message : "email invalide")] //Pour asserter que c'est un email il va vérifier s'il est conforme au format.
     private ?string $email = null;
 
     public function getId(): ?int
