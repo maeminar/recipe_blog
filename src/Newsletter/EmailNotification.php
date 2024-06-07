@@ -6,15 +6,17 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
 Class EmailNotification {
-    public function __construct(private MailerInterface $mailer)
-    {
-
+    public function __construct(
+    private MailerInterface $mailer, 
+    private string $adminEmail
+    ) {
     }
+
     public function sendConfirmationEmail (Mail $newEmail) : void
     {
         //Envoyer un mail :
         $email = (new Email())
-        ->from('admin@admin.com')
+        ->from($this->adminEmail)
         ->to($newEmail->getEmail())
         ->subject('Inscription à la newsletter')
         ->text('Sending emails is fun again!');

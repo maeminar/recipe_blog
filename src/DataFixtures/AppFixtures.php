@@ -29,7 +29,6 @@ class AppFixtures extends Fixture
             $recipe = new Recipe();
             $recipe
                 ->setName($faker->words($faker->numberBetween(4, 7), true))
-                ->setDescription($faker->varchar(255))
                 ->setCategory($faker->randomElement($categories));// Obligatoire pour ajouter un ID aléatoire dans ma table 
 
             $manager->persist($recipe);
